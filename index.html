@@ -67,19 +67,22 @@
 </head>
 <body>
 
-  <button onclick="playPraise()">Похвалить меня</button>
+  <button id="praiseButton" onclick="playPraise()">Похвалить меня</button>
   <audio id="praiseAudio" src="praise.mp3"></audio>
 
   <script>
     function playPraise() {
       const audio = document.getElementById("praiseAudio");
-      const button = document.querySelector("button");
+      const button = document.getElementById("praiseButton");
 
       audio.currentTime = 0;
       audio.play();
-
-      // Сброс фокуса с кнопки
       button.blur();
+      button.classList.add("bubbling");
+      
+      setTimeout(() => {
+        button.classList.remove("bubbling");
+      }, 300);
     }
   </script>
 
