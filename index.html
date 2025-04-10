@@ -40,21 +40,9 @@
       outline: none;
     }
 
-    button:focus {
-      outline: none !important;
-      box-shadow: none !important;
-    }
-
-    button:focus-visible {
-      outline: none !important;
-    }
-
-    button:focus {
-      -webkit-tap-highlight-color: transparent !important;
-    }
-
     button:active {
       transform: scale(1.15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
     @media (max-width: 480px) {
@@ -74,7 +62,7 @@
 </head>
 <body>
 
-  <button id="praiseButton" onclick="playPraise()" onmousedown="startBubbling()" ontouchstart="startBubbling()">Похвалить меня</button>
+  <button id="praiseButton" onclick="playPraise()">Похвалить меня</button>
   <audio id="praiseAudio" src="praise.mp3"></audio>
 
   <script>
@@ -82,18 +70,6 @@
       const audio = document.getElementById("praiseAudio");
       audio.currentTime = 0;
       audio.play();
-    }
-
-    function startBubbling() {
-      const button = document.getElementById("praiseButton");
-
-      button.classList.add("bubbling");
-
-      setTimeout(() => {
-        button.classList.remove("bubbling");
-      }, 300);
-
-      button.blur();
     }
   </script>
 
