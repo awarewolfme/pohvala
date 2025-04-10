@@ -33,7 +33,7 @@
       background-color: #F9D84F;
       color: #333;
       cursor: pointer;
-      transition: transform 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       max-width: 90vw;
       word-wrap: break-word;
@@ -42,17 +42,11 @@
 
     button:focus {
       outline: none;
-      box-shadow: none;
     }
 
     button:active {
-      animation: bubble 0.3s ease;
-    }
-
-    @keyframes bubble {
-      0%   { transform: scale(1); }
-      50%  { transform: scale(1.15); }
-      100% { transform: scale(1); }
+      transform: scale(1.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     }
 
     @media (max-width: 480px) {
@@ -82,11 +76,8 @@
 
       audio.currentTime = 0;
       audio.play();
+
       button.blur();
-      button.classList.add("bubbling");
-      setTimeout(() => {
-        button.classList.remove("bubbling");
-      }, 300);
     }
   </script>
 
