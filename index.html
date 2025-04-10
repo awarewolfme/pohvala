@@ -22,7 +22,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: hidden; /* убираем лишний скролл */
     }
 
     button {
@@ -38,6 +38,12 @@
       max-width: 90vw;
       word-wrap: break-word;
       outline: none;
+    }
+
+    /* Убираем синюю рамку при фокусе */
+    button:focus {
+      outline: none;
+      box-shadow: none;
     }
 
     button:active {
@@ -79,7 +85,6 @@
       audio.play();
       button.blur();
       button.classList.add("bubbling");
-      
       setTimeout(() => {
         button.classList.remove("bubbling");
       }, 300);
