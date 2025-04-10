@@ -22,28 +22,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: hidden; /* убираем лишний скролл */
     }
 
-   button {
-     padding: 20px 40px;
-     font-size: 24px;
-     border: none;
-     border-radius: 999px;
-     background-color: #F9D84F;
-     color: #333;
-     cursor: pointer;
-     transition: transform 0.15s ease;
-     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-     max-width: 90vw;
-     word-wrap: break-word;
-     outline: none;
-   }
+    button {
+      padding: 20px 40px;
+      font-size: 24px;
+      border: none;
+      border-radius: 999px;
+      background-color: #F9D84F;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      max-width: 90vw;
+      word-wrap: break-word;
+      outline: none;
+    }
 
-button:focus {
-  outline: none;
-  box-shadow: none;
-}
+    button:active {
+      animation: bubble 0.3s ease;
+    }
 
     @keyframes bubble {
       0%   { transform: scale(1); }
@@ -74,8 +73,13 @@ button:focus {
   <script>
     function playPraise() {
       const audio = document.getElementById("praiseAudio");
+      const button = document.querySelector("button");
+
       audio.currentTime = 0;
       audio.play();
+
+      // Сброс фокуса с кнопки
+      button.blur();
     }
   </script>
 
