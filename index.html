@@ -41,8 +41,8 @@
     }
 
     button:focus {
-      outline: none;
-      box-shadow: none;
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     button:active {
@@ -51,12 +51,11 @@
     }
 
     button:focus-visible {
-      outline: none;
+      outline: none !important;
     }
 
-    button:focus-visible {
-      outline: none;
-      -webkit-tap-highlight-color: transparent;
+    button:focus {
+      -webkit-tap-highlight-color: transparent !important;
     }
 
     @media (max-width: 480px) {
