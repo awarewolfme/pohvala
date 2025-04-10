@@ -42,6 +42,7 @@
 
     button:focus {
       outline: none;
+      box-shadow: none;
     }
 
     button:active {
@@ -84,6 +85,8 @@
       setTimeout(() => {
         button.classList.remove("bubbling");
       }, 300);
+
+      button.blur();
     }
   </script>
 
