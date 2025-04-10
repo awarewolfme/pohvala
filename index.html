@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Похвали меня</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #544494;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    button {
+      padding: 20px 40px;
+      font-size: 24px;
+      border: none;
+      border-radius: 999px;
+      background-color: #F9D84F;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    button:active {
+      animation: bubble 0.3s ease;
+    }
+
+    @keyframes bubble {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="playPraise()">Похвалить меня</button>
+  <audio id="praiseAudio" src="praise.mp3"></audio>
+
+  <script>
+    function playPraise() {
+      const audio = document.getElementById("praiseAudio");
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
